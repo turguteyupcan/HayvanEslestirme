@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - DropArea
+  - Cat
   layers:
   - Default
   - TransparentFX
