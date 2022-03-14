@@ -310,6 +310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cat
       objectReference: {fileID: 0}
+    - target: {fileID: 3486818616333991862, guid: 36982e3adb6c6484f8ffd743f02ce846, type: 3}
+      propertyPath: myAnimalName
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7847595674747367545, guid: 36982e3adb6c6484f8ffd743f02ce846, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -411,6 +415,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5103845813887286019, guid: d3f64b7e375b93449b0640fbff492546, type: 3}
+      propertyPath: myAnimalName
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6978232007231364837, guid: d3f64b7e375b93449b0640fbff492546, type: 3}
       propertyPath: m_Name
       value: Rabbit
@@ -479,6 +487,10 @@ PrefabInstance:
     - target: {fileID: 4781226650980586989, guid: e5d20434528ec3448a6b4b789eb42ade, type: 3}
       propertyPath: m_Name
       value: Banana
+      objectReference: {fileID: 0}
+    - target: {fileID: 8557729721431787497, guid: e5d20434528ec3448a6b4b789eb42ade, type: 3}
+      propertyPath: myFoodName
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5d20434528ec3448a6b4b789eb42ade, type: 3}
@@ -593,6 +605,10 @@ PrefabInstance:
     - target: {fileID: 7880658357267376262, guid: 8d1967fa7a4729c4e9220349b67f4e9a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7880658357267376378, guid: 8d1967fa7a4729c4e9220349b67f4e9a, type: 3}
+      propertyPath: myAnimalName
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7880658357267376379, guid: 8d1967fa7a4729c4e9220349b67f4e9a, type: 3}
       propertyPath: m_Name

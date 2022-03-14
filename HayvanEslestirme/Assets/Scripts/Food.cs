@@ -6,6 +6,8 @@ using DG.Tweening;
 public class Food : MonoBehaviour
 {
     Vector3 offset;
+    [SerializeField]
+    public FoodsEnum myFoodName = new FoodsEnum();
 
     private void OnMouseDown()
     {
@@ -31,6 +33,20 @@ public class Food : MonoBehaviour
             {
                 transform.position = hitInfo.transform.position;
                 //Destroy(transform.gameObject);
+
+                var _tempComparisonResult = GameManager.Instance.CompareCombination(hitInfo.collider.gameObject.GetComponent<Animal>().myAnimalName, myFoodName);
+                if (_tempComparisonResult == CombinationResult.Perfect)
+                {
+                    Debug.Log("Perfect");
+                }
+                else if (_tempComparisonResult == CombinationResult.Average)
+                {
+                    Debug.Log("Average");
+                }
+                else
+                {
+                    Debug.Log("Poor");
+                }
             }
         }
         else

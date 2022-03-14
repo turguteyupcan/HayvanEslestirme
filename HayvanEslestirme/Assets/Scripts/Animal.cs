@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Animal : MonoBehaviour
 {
+    [SerializeField]
+    public AnimalsEnum myAnimalName = new AnimalsEnum();
+
     // Start is called before the first frame update
     void Start()
     {
