@@ -108,3 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f8999861c20a4344b2a802e8792e45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myFoodName: 1
