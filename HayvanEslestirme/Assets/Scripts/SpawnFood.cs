@@ -4,17 +4,31 @@ using UnityEngine;
 
 public class SpawnFood : MonoBehaviour
 {
-    public GameObject spawnedFood;
+    public GameObject[] spawnedFood;
+    int randomIndex;
+
+    void setRandomIndex()
+    {
+        //int randomindexBefore = randomIndex;
+        randomIndex = Random.Range(0, spawnedFood.Length);
+        //while (randomIndex != randomindexBefore)
+        //{
+        //    randomIndex = Random.Range(0, spawnedFood.Length);
+        //}
+        Debug.Log("RandomIndex: " + randomIndex);
+        
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(spawnedFood);
+        Spawn();
     }
 
     public void Spawn()
     {
-        Instantiate(spawnedFood);
+        setRandomIndex();
+        //Debug.Log("FoodNumber: "+randomIndex);
+        Instantiate(spawnedFood[randomIndex]);
     }
-    
 }

@@ -109,3 +109,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myFoodName: 3
+  spawnedFood: {fileID: 1975495540275803697, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}

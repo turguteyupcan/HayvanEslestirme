@@ -8,9 +8,11 @@ public class Food : MonoBehaviour
     Vector3 offset;
     [SerializeField]
     public FoodsEnum myFoodName = new FoodsEnum();
+    public GameObject spawnedFood;
 
     private void OnMouseDown()
     {
+        
         offset = transform.position-MouseWorldPosition();
         transform.GetComponent<Collider>().enabled = false;
         
@@ -19,7 +21,7 @@ public class Food : MonoBehaviour
     private void OnMouseDrag()
     {
         transform.position = MouseWorldPosition()+offset;
-
+        transform.Rotate(0, 0, 1f);
     }
 
     private void OnMouseUp()
@@ -47,11 +49,13 @@ public class Food : MonoBehaviour
                 {
                     Debug.Log("Poor");
                 }
+                Destroy(transform.gameObject);
             }
         }
         else
         {
             transform.DOMove(new Vector3(0, 0, 0), 0.3f);
+            transform.DORotate(new Vector3(0, 0, 0), 0.3f);
         }
 
         transform.GetComponent<Collider>().enabled=true;
@@ -61,5 +65,18 @@ public class Food : MonoBehaviour
         var MouseScreenPos= Input.mousePosition;
         MouseScreenPos.z = Camera.main.WorldToScreenPoint(transform.position).z;
         return Camera.main.ScreenToWorldPoint(MouseScreenPos);
+    }
+
+    public static bool isQuit = false;
+    private void OnApplicationQuit()
+    {
+        isQuit = true;
+    }
+    private void OnDestroy()
+    {
+        if (!isQuit)
+        {
+            spawnedFood.GetComponent<SpawnFood>().Spawn();
+        }
     }
 }
