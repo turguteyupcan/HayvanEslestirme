@@ -5,30 +5,45 @@ using UnityEngine;
 public class SpawnFood : MonoBehaviour
 {
     public GameObject[] spawnedFood;
-    int randomIndex;
+    public GameObject[] animals;
+    int randomIndex=-1;
 
     void setRandomIndex()
     {
-        //int randomindexBefore = randomIndex;
+        int randomindexBefore = randomIndex;
         randomIndex = Random.Range(0, spawnedFood.Length);
-        //while (randomIndex != randomindexBefore)
-        //{
-        //    randomIndex = Random.Range(0, spawnedFood.Length);
-        //}
+        while (randomIndex == randomindexBefore)
+        {
+            randomIndex = Random.Range(0, spawnedFood.Length);
+        }
         Debug.Log("RandomIndex: " + randomIndex);
         
+    }
+
+    private void Awake()
+    {
+        GameObject[] temp = GameObject.FindGameObjectsWithTag("DropArea");
+        animals = temp;
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        foreach (var item in animals)
+        {
+            item.SetActive(false);
+        }
         Spawn();
+        
     }
 
     public void Spawn()
     {
+        Debug.Log(animals.Length);
         setRandomIndex();
         //Debug.Log("FoodNumber: "+randomIndex);
+        animals[randomIndex].SetActive(true);
         Instantiate(spawnedFood[randomIndex]);
+        
     }
 }

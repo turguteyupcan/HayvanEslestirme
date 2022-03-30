@@ -10,6 +10,11 @@ public class Food : MonoBehaviour
     public FoodsEnum myFoodName = new FoodsEnum();
     public GameObject spawnedFood;
 
+    private void Start()
+    {
+        spawnedFood = GameObject.Find("FoodSpawner");
+    }
+
     private void OnMouseDown()
     {
         

@@ -418,23 +418,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1975495540275803703, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}
-      propertyPath: Animals.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1975495540275803703, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}
-      propertyPath: Animals.Array.data[0]
+      propertyPath: animals.Array.data[0]
       value: 
       objectReference: {fileID: 387300117}
     - target: {fileID: 1975495540275803703, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}
-      propertyPath: Animals.Array.data[1]
+      propertyPath: animals.Array.data[1]
       value: 
       objectReference: {fileID: 518000882}
     - target: {fileID: 1975495540275803703, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}
-      propertyPath: Animals.Array.data[2]
+      propertyPath: animals.Array.data[2]
       value: 
       objectReference: {fileID: 351660945}
     - target: {fileID: 1975495540275803703, guid: 90a6c0dd7bfc7ed49aa78c4157de3786, type: 3}
-      propertyPath: Animals.Array.data[3]
+      propertyPath: animals.Array.data[3]
       value: 
       objectReference: {fileID: 1973875699}
     m_RemovedComponents: []
