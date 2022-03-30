@@ -7,7 +7,7 @@ public class SpawnFood : MonoBehaviour
     public GameObject[] spawnedFood;
     public GameObject[] animals;
     int randomIndex=-1;
-
+    int turn=0;
     void setRandomIndex()
     {
         int randomindexBefore = randomIndex;
@@ -37,12 +37,25 @@ public class SpawnFood : MonoBehaviour
         
     }
 
+    [System.Obsolete]
     public void Spawn()
     {
+        
         setRandomIndex();
+        if (turn<4 && animals[randomIndex].active == false)
+        {
+            animals[randomIndex].SetActive(true);
+        }
+        else if(turn <4 && animals[randomIndex].active == true)
+        {
+            while (animals[randomIndex].active == true)
+            {
+                setRandomIndex();
+            }
+            animals[randomIndex].SetActive(true);
+        }
         
-        animals[randomIndex].SetActive(true);
         Instantiate(spawnedFood[randomIndex]);
-        
+        turn++;
     }
 }
