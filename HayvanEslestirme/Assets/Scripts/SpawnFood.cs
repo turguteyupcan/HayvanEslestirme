@@ -16,7 +16,7 @@ public class SpawnFood : MonoBehaviour
         {
             randomIndex = Random.Range(0, spawnedFood.Length);
         }
-        Debug.Log("RandomIndex: " + randomIndex);
+        
         
     }
 
@@ -39,9 +39,8 @@ public class SpawnFood : MonoBehaviour
 
     public void Spawn()
     {
-        Debug.Log(animals.Length);
         setRandomIndex();
-        //Debug.Log("FoodNumber: "+randomIndex);
+        
         animals[randomIndex].SetActive(true);
         Instantiate(spawnedFood[randomIndex]);
         
