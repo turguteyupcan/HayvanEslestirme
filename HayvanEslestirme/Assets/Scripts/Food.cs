@@ -10,6 +10,8 @@ public class Food : MonoBehaviour
     public FoodsEnum myFoodName = new FoodsEnum();
     public GameObject spawnedFood;
 
+    public GameObject imagePrefab;
+
     private void Start()
     {
         spawnedFood = GameObject.Find("FoodSpawner");
@@ -55,6 +57,15 @@ public class Food : MonoBehaviour
                     Debug.Log("Poor");
                 }
                 Destroy(transform.gameObject);
+
+                GameObject image = Instantiate(imagePrefab) as GameObject;
+                image.transform.SetParent(GameManager.Instance.canvas.transform, false);
+
+                Vector2 screenXY = Camera.main.WorldToScreenPoint(transform.position);
+                image.GetComponent<RectTransform>().position = screenXY;
+
+                Destroy(image, 1f);
+                
             }
         }
         else

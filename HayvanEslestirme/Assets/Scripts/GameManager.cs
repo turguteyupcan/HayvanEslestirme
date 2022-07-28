@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour
     public Dictionary<AnimalsEnum, FoodsEnum> perfectAnimalCombination = new Dictionary<AnimalsEnum, FoodsEnum>();
     public Dictionary<AnimalsEnum, FoodsEnum> averageAnimalCombination = new Dictionary<AnimalsEnum, FoodsEnum>();
 
+    public static GameObject gameManager;
+
+    public GameObject canvas;
+
     void PerfectCondition()
     {
         perfectAnimalCombination.Add(AnimalsEnum.Cat, FoodsEnum.Fish);
@@ -58,7 +62,9 @@ public class GameManager : MonoBehaviour
         _instance = this;
         PerfectCondition();
         AverageCondition();
-        
+
+        if (gameManager != null)
+            gameManager = this.gameObject;
 
     }
     
