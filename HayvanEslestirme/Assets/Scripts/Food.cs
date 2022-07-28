@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Food : MonoBehaviour
 {
@@ -44,23 +45,26 @@ public class Food : MonoBehaviour
                 //Destroy(transform.gameObject);
 
                 var _tempComparisonResult = GameManager.Instance.CompareCombination(hitInfo.collider.gameObject.GetComponent<Animal>().myAnimalName, myFoodName);
+                GameObject image = Instantiate(imagePrefab) as GameObject;
+
+                image.transform.SetParent(GameManager.Instance.canvas.transform, false);
+                Text theText = image.transform.GetComponentInChildren<Text>();
+                
                 if (_tempComparisonResult == CombinationResult.Perfect)
                 {
-                    Debug.Log("Perfect");
+                    theText.text = "Perfect";
                 }
                 else if (_tempComparisonResult == CombinationResult.Average)
                 {
-                    Debug.Log("Average");
+                    theText.text = "Average";
                 }
                 else
                 {
-                    Debug.Log("Poor");
+                    theText.text = "Poor";
                 }
                 Destroy(transform.gameObject);
 
-                GameObject image = Instantiate(imagePrefab) as GameObject;
-                image.transform.SetParent(GameManager.Instance.canvas.transform, false);
-
+                
                 Vector2 screenXY = Camera.main.WorldToScreenPoint(transform.position);
                 image.GetComponent<RectTransform>().position = screenXY;
 
